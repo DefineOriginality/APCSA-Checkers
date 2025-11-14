@@ -20,13 +20,29 @@ public class Main {
     }
 
     private static void printBoard(Checker[][] board) {
+        // Top border
+        System.out.print("+");
+        for (int j = 0; j < 8; j++) {
+            System.out.print("--+");
+        }
+        System.out.println();
+
         for (int i = 0; i < 8; i++) {
+            System.out.print("|");
             for (int j = 0; j < 8; j++) {
                 if (board[i][j] != null) {
-                    System.out.print(board[i][j].getColor().charAt(0) + " ");
+                    System.out.print(board[i][j].getColor().charAt(0) + "  ");
                 } else {
                     System.out.print(". ");
                 }
+                System.out.print("|");
+            }
+            System.out.println();
+            
+            // Horizontal line after each row
+            System.out.print("+");
+            for (int j = 0; j < 8; j++) {
+                System.out.print("--+");
             }
             System.out.println();
         }
